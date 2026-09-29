@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GRULU · Grupo Lunardo — Actividades reales. Patrimonio sólido. Visión de futuro.</title>
+  <meta name="description" content="GRULU, Grupo Lunardo, es un grupo empresarial especializado en servicios para el hogar, patrimonio inmobiliario y gestión forestal. Gijón, Principado de Asturias." />
+  <!-- Open Graph -->
+  <meta property="og:title"       content="GRULU · Grupo Lunardo" />
+  <meta property="og:description" content="Actividades reales. Patrimonio sólido. Visión de futuro." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:locale"      content="es_ES" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo-grulu-light.png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
+  <header id="navbar" class="navbar" role="banner">
+    <div class="container">
+      <nav class="navbar-inner" aria-label="Navegación principal">
+
+        <!-- Logo — src cambia vía JS al hacer scroll -->
+        <a href="#inicio" class="navbar-logo" aria-label="GRULU · Inicio">
+          <img id="navLogo" src="assets/logo-grulu-principal.png" alt="GRULU Grupo Lunardo" />
+        </a>
+
+        <!-- Links escritorio -->
+        <ul class="nav-links" role="list">
+          <li><a href="#inicio" class="active">Inicio</a></li>
+          <li><a href="#quienes">Quiénes Somos</a></li>
+          <li><a href="#como">Cómo Trabajamos</a></li>
+          <li><a href="#valores">Nuestros Valores</a></li>
+          <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+        </ul>
+
+        <!-- Hamburger móvil -->
+        <button id="hamburger" class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- Menú móvil overlay -->
+  <nav id="mobileMenu" class="mobile-menu" aria-label="Menú móvil">
+    <a href="#inicio">Inicio</a>
+    <a href="#quienes">Quiénes Somos</a>
+    <a href="#como">Cómo Trabajamos</a>
+    <a href="#valores">Nuestros Valores</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+
+  <!-- =====================================================
+       MAIN
+       ===================================================== -->
+  <main>
+
+    <!-- ① HERO ------------------------------------------ -->
+    <section id="inicio" class="hero" aria-label="Presentación corporativa">
+
+      <!-- Imagen de ambiente editorial (derecha) -->
+      <img
+        class="hero-bg-img"
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&auto=format&fit=crop"
+        alt=""
+        role="presentation"
+        loading="eager"
+      />
+      <div class="hero-bg-overlay" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-content">
+
+          <!-- Columna logo -->
+          <div class="hero-logo-col">
+            <img
+              class="hero-logo fade-in"
+              src="assets/logo-grulu-principal.png"
+              alt="GRULU Grupo Lunardo"
+              loading="eager"
+            />
+          </div>
+
+          <!-- Columna tagline -->
+          <div class="hero-text-col">
+            <h1 class="hero-tagline">
+              <span class="linea-hero"><span>Actividades reales.</span></span>
+              <span class="linea-hero"><span>Patrimonio sólido.</span></span>
+              <span class="linea-hero"><span class="linea-dorada-txt">Visión de futuro.</span></span>
+            </h1>
+
+            <p class="hero-desc">
+              Grupo empresarial especializado en servicios para el hogar, patrimonio inmobiliario y gestión forestal.<br><br>
+              Construimos actividades que aportan valor a las personas y permanecen en el tiempo.
+            </p>
+
+            <p class="hero-lema">Pensamos en décadas, no en trimestres.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="hero-divider" aria-hidden="true"></div>
+    </section>
+
+
+    <!-- ② NUESTRAS ACTIVIDADES -------------------------- -->
+    <section id="actividades" class="sec-actividades" aria-label="Nuestras actividades">
+      <div class="container">
+
+        <header class="sec-header fade-up">
+          <p class="etiqueta-seccion">Grupo empresarial</p>
+          <h2 class="sec-titulo">Nuestras Actividades</h2>
+          <span class="linea-dorada"></span>
+        </header>
+
+        <div class="actividades-grid">
+
+          <!-- Tarjeta 1: Línea Urbana -->
+          <a href="https://www.lineaurbana.online/" target="_blank" rel="noopener" class="actividad-card fade-up stagger-1" aria-label="Ir a la web de Línea Urbana">
+            <div class="actividad-img-wrap">
+              <img
+                src="assets/img/actividad-linea-urbana.jpg"
+                alt="Línea Urbana — Arquitectura urbana costera"
+                loading="lazy"
+              />
+            </div>
+            <div class="actividad-info">
+              <div class="actividad-logo-wrap">
+                <img class="actividad-logo-img" src="assets/logo-lu-tight.png" alt="Logo Línea Urbana" />
+              </div>
+              <h3 class="actividad-nombre">Línea Urbana</h3>
+              <p class="actividad-desc">
+                Construimos patrimonio con los pies en la tierra y la vista puesta en el futuro.
+              </p>
+              <span class="actividad-link">
+                Conocer más
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Tarjeta 2: Sistemas de Ducha -->
+          <a href="https://www.sistemasdeducha.com/" target="_blank" rel="noopener" class="actividad-card fade-up stagger-2" aria-label="Ir a la web de Sistemas de Ducha">
+            <div class="actividad-img-wrap">
+              <img
+                src="assets/img/actividad-sistemas-ducha.jpg"
+                alt="Sistemas de Ducha — Baño premium contemporáneo"
+                loading="lazy"
+              />
+            </div>
+            <div class="actividad-info">
+              <div class="actividad-logo-wrap">
+                <img class="actividad-logo-img" src="assets/logo-sd.png" alt="Logo Sistemas de Ducha" />
+              </div>
+              <h3 class="actividad-nombre">Sistemas de Ducha</h3>
+              <p class="actividad-desc">
+                Mejoramos la comodidad, la accesibilidad y el aprovechamiento del espacio en el baño.
+              </p>
+              <span class="actividad-link">
+                Conocer más
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Tarjeta 3: Bosques Cantábricos -->
+          <a href="https://www.bosquescantabricos.es/" target="_blank" rel="noopener" class="actividad-card fade-up stagger-3" aria-label="Ir a la web de Bosques Cantábricos">
+            <div class="actividad-img-wrap">
+              <img
+                src="assets/img/actividad-bosques-cantabricos-opt.jpg"
+                alt="Bosques Cantábricos — Gestión forestal Asturias"
+                loading="lazy"
+              />
+            </div>
+            <div class="actividad-info">
+              <div class="actividad-logo-wrap">
+                <img class="actividad-logo-img" src="assets/logo-bc-clean.png" alt="Logo Bosques Cantábricos" />
+              </div>
+              <h3 class="actividad-nombre">Bosques Cantábricos</h3>
+              <p class="actividad-desc">
+                Gestión forestal, patrimonio y sostenibilidad en el entorno cantábrico.
+              </p>
+              <span class="actividad-link">
+                Conocer más
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ③ CÓMO TRABAJAMOS ------------------------------- -->
+    <section id="como" class="sec-como" aria-label="Cómo trabajamos">
+      <div class="container">
+
+        <header class="sec-header fade-up">
+          <p class="etiqueta-seccion" style="justify-content:center; color: rgba(196,135,28,0.8);">Nuestra metodología</p>
+          <h2 class="sec-titulo">Cómo Trabajamos</h2>
+          <span class="linea-dorada"></span>
+        </header>
+
+        <div class="como-grid">
+
+          <!-- Planificamos -->
+          <div class="como-item fade-up stagger-1">
+            <div class="como-icono-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2"/>
+                <path d="M16 2v4M8 2v4M3 10h18"/>
+                <path d="M8 14h2M8 17h6"/>
+              </svg>
+            </div>
+            <h3 class="como-titulo">Planificamos</h3>
+            <p class="como-desc">Analizamos, organizamos y establecemos prioridades claras.</p>
+          </div>
+
+          <!-- Coordinamos -->
+          <div class="como-item fade-up stagger-2">
+            <div class="como-icono-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+                <circle cx="9" cy="7" r="3"/>
+                <circle cx="15" cy="7" r="3"/>
+                <path d="M3 21v-2a6 6 0 0 1 6-6h6a6 6 0 0 1 6 6v2"/>
+              </svg>
+            </div>
+            <h3 class="como-titulo">Coordinamos</h3>
+            <p class="como-desc">Gestionamos cada proyecto con comunicación, transparencia y rigor.</p>
+          </div>
+
+          <!-- Supervisamos -->
+          <div class="como-item fade-up stagger-3">
+            <div class="como-icono-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+                <path d="M9 11l3 3L22 4"/>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+            </div>
+            <h3 class="como-titulo">Supervisamos</h3>
+            <p class="como-desc">Realizamos seguimiento y control de cada fase para asegurar resultados.</p>
+          </div>
+
+          <!-- Mejoramos -->
+          <div class="como-item fade-up stagger-4">
+            <div class="como-icono-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+                <path d="M3 17l4-8 4 4 4-6 4 4"/>
+                <path d="M21 21H3"/>
+              </svg>
+            </div>
+            <h3 class="como-titulo">Mejoramos</h3>
+            <p class="como-desc">Evaluamos resultados y aplicamos mejoras continuas en cada proyecto.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ④ QUIÉNES SOMOS + CONTACTO --------------------- -->
+    <section id="quienes" class="sec-quienes" aria-label="Quiénes somos">
+      <div class="container">
+        <div class="quienes-grid">
+
+          <!-- Columna: Quiénes somos -->
+          <div class="quienes-texto fade-left">
+            <p class="etiqueta-seccion">El grupo</p>
+            <h2 class="sec-titulo">Quiénes Somos</h2>
+
+            <p class="quienes-parrafo">
+              GRULU es un grupo empresarial especializado en servicios para el hogar, patrimonio inmobiliario y gestión forestal.
+            </p>
+            <p class="quienes-parrafo">
+              Nacemos con una idea sencilla: construir actividades reales, sostenibles y útiles para las personas, manteniendo una visión de largo plazo en cada decisión.
+            </p>
+            <p class="quienes-parrafo">
+              Cada proyecto conserva su identidad propia, pero comparte una misma forma de entender el trabajo: profesionalidad, responsabilidad y compromiso con el territorio.
+            </p>
+
+            <p class="quienes-lema">"Pensamos en décadas, no en trimestres."</p>
+          </div>
+
+          <!-- Columna: Contacto -->
+          <div id="contacto" class="quienes-contacto fade-right">
+            <p class="etiqueta-seccion">Estamos aquí</p>
+            <h2 class="sec-titulo">Contacto</h2>
+
+            <ul class="contacto-lista" role="list">
+
+              <li class="contacto-item">
+                <!-- Icono teléfono -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span><a href="tel:+34984276100">984 276 100</a></span>
+              </li>
+
+              <li class="contacto-item">
+                <!-- Logo oficial WhatsApp -->
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:18px;height:18px;flex-shrink:0;margin-top:2px;color:var(--dorado)">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                </svg>
+                <span><a href="https://wa.me/34984276100" target="_blank" rel="noopener">984 276 100</a></span>
+              </li>
+
+              <li class="contacto-item">
+                <!-- Icono email -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                <span><a href="mailto:oficina@grulu.es">oficina@grulu.es</a></span>
+              </li>
+
+              <li class="contacto-item">
+                <!-- Icono ubicación -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>Principado de Asturias</span>
+              </li>
+
+            </ul>
+
+            <a href="mailto:oficina@grulu.es" class="btn-cta">
+              Hablemos
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ⑤ VALORES -------------------------------------- -->
+    <section id="valores" class="sec-valores" aria-label="Nuestros valores y compromisos">
+      <div class="container">
+
+        <header class="sec-header fade-up">
+          <p class="etiqueta-seccion" style="justify-content:center;">Nuestra identidad</p>
+          <h2 class="sec-titulo">Nuestros Compromisos</h2>
+          <span class="linea-dorada"></span>
+        </header>
+
+        <div class="valores-grid">
+
+          <!-- 3 Actividades -->
+          <div class="valor-item fade-up stagger-1">
+            <svg class="valor-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+              <circle cx="6" cy="12" r="2"/><circle cx="12" cy="6" r="2"/><circle cx="18" cy="12" r="2"/>
+              <path d="M8 12h4M12 8v4M14 12h4"/>
+            </svg>
+            <h3 class="valor-titulo">3 Actividades</h3>
+            <p class="valor-desc">Diversificación con sentido y propósito. Cada línea aporta valor diferente al grupo.</p>
+          </div>
+
+          <!-- Pensamos en décadas -->
+          <div class="valor-item fade-up stagger-2">
+            <svg class="valor-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+              <path d="M3 17l4-8 4 4 4-6 4 4"/>
+              <circle cx="12" cy="12" r="1" fill="currentColor"/>
+            </svg>
+            <h3 class="valor-titulo">Pensamos en Décadas</h3>
+            <p class="valor-desc">Tomamos decisiones pensando en generaciones, no en resultados inmediatos.</p>
+          </div>
+
+          <!-- Compromiso con el territorio -->
+          <div class="valor-item fade-up stagger-3">
+            <svg class="valor-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+            <h3 class="valor-titulo">Compromiso con el Territorio</h3>
+            <p class="valor-desc">Asturias es nuestro origen y nuestro compromiso. Construimos desde aquí.</p>
+          </div>
+
+          <!-- Gestión responsable -->
+          <div class="valor-item fade-up stagger-4">
+            <svg class="valor-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+            <h3 class="valor-titulo">Gestión Responsable</h3>
+            <p class="valor-desc">Equilibramos rentabilidad, sostenibilidad e impacto positivo en el entorno.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <!-- Logo + Tagline -->
+        <div class="footer-logo-col">
+          <img src="assets/logo-grulu-dark.jpg" alt="GRULU Grupo Lunardo" class="footer-logo-img" />
+          <p class="footer-tagline">Actividades reales. Patrimonio sólido. Visión de futuro.</p>
+        </div>
+
+        <!-- Actividades -->
+        <nav class="footer-nav" aria-label="Actividades del grupo">
+          <h4>Actividades</h4>
+          <ul role="list">
+            <li><a href="https://www.lineaurbana.online/" target="_blank" rel="noopener">Línea Urbana</a></li>
+            <li><a href="https://www.sistemasdeducha.com/" target="_blank" rel="noopener">Sistemas de Ducha</a></li>
+            <li><a href="https://www.bosquescantabricos.es/" target="_blank" rel="noopener">Bosques Cantábricos</a></li>
+          </ul>
+        </nav>
+
+        <!-- Empresa -->
+        <nav class="footer-nav" aria-label="Información de empresa">
+          <h4>Empresa</h4>
+          <ul role="list">
+            <li><a href="#quienes">Quiénes Somos</a></li>
+            <li><a href="#como">Cómo Trabajamos</a></li>
+            <li><a href="#valores">Nuestros Valores</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <!-- Contacto -->
+        <address class="footer-contacto-col" style="font-style:normal;">
+          <h4>Contacto</h4>
+          <p>
+            <a href="tel:+34984276100">984 276 100</a><br>
+            <a href="mailto:oficina@grulu.es">oficina@grulu.es</a><br>
+            Principado de Asturias
+          </p>
+        </address>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Grupo Lunardo, S.L. Todos los derechos reservados.</p>
+        <nav class="footer-legales" aria-label="Información legal">
+          <a href="#">Aviso Legal</a>
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Política de Cookies</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>

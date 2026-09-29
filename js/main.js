@@ -1,0 +1,131 @@
+/* ============================================================
+   GRULU · main.js — Animaciones e interacciones
+   ============================================================ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ---- 1. NAVBAR: cambio de estilo y logo al hacer scroll --- */
+  const navbar = document.getElementById('navbar');
+  const navLogo = document.getElementById('navLogo');
+
+  const handleNavbarScroll = () => {
+    if (window.scrollY > 60) {
+      if (!navbar.classList.contains('scrolled')) {
+        navbar.classList.add('scrolled');
+        if (navLogo) navLogo.src = 'assets/logo-grulu-dark.jpg';
+      }
+    } else {
+      if (navbar.classList.contains('scrolled')) {
+        navbar.classList.remove('scrolled');
+        if (navLogo) navLogo.src = 'assets/logo-grulu-principal.png';
+      }
+    }
+  };
+
+  window.addEventListener('scroll', handleNavbarScroll, { passive: true });
+  handleNavbarScroll(); // comprobar estado inicial
+
+
+  /* ---- 2. HERO: animación de tagline línea por línea --------- */
+  // Disparamos las líneas del hero tras un pequeño delay inicial
+  setTimeout(() => {
+    const lineasHero = document.querySelectorAll('.linea-hero');
+    lineasHero.forEach(linea => linea.classList.add('visible'));
+
+    const heroDesc = document.querySelector('.hero-desc');
+    const heroLema = document.querySelector('.hero-lema');
+    if (heroDesc) heroDesc.classList.add('visible');
+    if (heroLema) heroLema.classList.add('visible');
+  }, 200);
+
+
+  /* ---- 3. INTERSECTION OBSERVER: animaciones on-scroll ------- */
+  const animTargets = document.querySelectorAll(
+    '.fade-up, .fade-left, .fade-right, .fade-in, .scale-in, .linea-dorada'
+  );
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Dejar de observar una vez animado (one-shot)
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -60px 0px'
+  });
+
+  animTargets.forEach(el => observer.observe(el));
+
+
+  /* ---- 4. HAMBURGER + MOBILE MENU --------------------------- */
+  const hamburger    = document.getElementById('hamburger');
+  const mobileMenu   = document.getElementById('mobileMenu');
+  const mobileLinks  = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+
+  const toggleMenu = (open) => {
+    hamburger.classList.toggle('open', open);
+    mobileMenu.classList.toggle('open', open);
+  };
+
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.contains('open');
+      toggleMenu(!isOpen);
+    });
+  }
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => toggleMenu(false));
+  });
+
+
+  /* ---- 5. SMOOTH SCROLL para anclas internas ---------------- */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = navbar ? navbar.offsetHeight + 20 : 80;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+
+  /* ---- 6. ACTIVE NAV LINK según sección visible ------------- */
+  const sections  = document.querySelectorAll('section[id]');
+  const navLinks  = document.querySelectorAll('.nav-links a');
+
+  const activeSectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach(sec => activeSectionObserver.observe(sec));
+
+
+  /* ---- 7. PARALLAX MUY SUTIL en imagen hero ----------------- */
+  const heroBgImg = document.querySelector('.hero-bg-img');
+
+  if (heroBgImg) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      heroBgImg.style.transform = `translateY(${scrolled * 0.18}px)`;
+    }, { passive: true });
+  }
+
+
+  /* ---- 8. HOVER: tarjetas actividades — cursor personalizado  */
+  // (mantenemos el cursor default del sistema — elegant y limpio)
+
+}); // end DOMContentLoaded
