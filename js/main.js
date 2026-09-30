@@ -46,6 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ---- 3. INTERSECTION OBSERVER: animaciones on-scroll ------- */
+  const isMobile = window.innerWidth < 900;
+
+  // Elementos generales (fade-up, fade-left, etc.)
   const animTargets = document.querySelectorAll(
     '.fade-up, .fade-left, .fade-right, .fade-in, .scale-in, .linea-dorada'
   );
@@ -54,16 +57,57 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        // Dejar de observar una vez animado (one-shot)
         observer.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -60px 0px'
+    threshold: isMobile ? 0.05 : 0.12,
+    rootMargin: isMobile ? '0px 0px -20px 0px' : '0px 0px -60px 0px'
   });
 
   animTargets.forEach(el => observer.observe(el));
+
+  // Tarjetas de actividades — stagger manual por índice
+  const actCards = document.querySelectorAll('.actividad-card');
+  const actObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const delay = parseInt(el.dataset.stagger || 0);
+        setTimeout(() => el.classList.add('visible'), delay);
+        actObserver.unobserve(el);
+      }
+    });
+  }, {
+    threshold: isMobile ? 0.04 : 0.1,
+    rootMargin: isMobile ? '0px 0px -10px 0px' : '0px 0px -40px 0px'
+  });
+
+  actCards.forEach((card, i) => {
+    card.dataset.stagger = i * 120; // 120ms entre cada tarjeta
+    actObserver.observe(card);
+  });
+
+  // Tarjetas de valores — stagger manual por índice
+  const valorItems = document.querySelectorAll('.valor-item');
+  const valorObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const delay = parseInt(el.dataset.stagger || 0);
+        setTimeout(() => el.classList.add('visible'), delay);
+        valorObserver.unobserve(el);
+      }
+    });
+  }, {
+    threshold: isMobile ? 0.05 : 0.1,
+    rootMargin: isMobile ? '0px 0px -10px 0px' : '0px 0px -40px 0px'
+  });
+
+  valorItems.forEach((item, i) => {
+    item.dataset.stagger = i * 100; // 100ms entre cada valor
+    valorObserver.observe(item);
+  });
 
 
   /* ---- 4. HAMBURGER + MOBILE MENU --------------------------- */

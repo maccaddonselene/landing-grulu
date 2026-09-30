@@ -426,14 +426,14 @@ ul  { list-style: none; }
    ============================================================ */
 .fade-up, .fade-left, .fade-right, .fade-in, .scale-in {
   opacity: 0;
-  transition: opacity 0.8s var(--ease-elegante), transform 0.8s var(--ease-elegante);
+  transition: opacity 0.75s var(--ease-elegante), transform 0.75s var(--ease-elegante);
 }
 
-.fade-up    { transform: translateY(48px); }
-.fade-left  { transform: translateX(-48px); }
-.fade-right { transform: translateX(48px); }
+.fade-up    { transform: translateY(36px); }
+.fade-left  { transform: translateX(-36px); }
+.fade-right { transform: translateX(36px); }
 .fade-in    { transform: translateY(0); }
-.scale-in   { transform: scale(0.93); }
+.scale-in   { transform: scale(0.95); }
 
 .fade-up.visible,
 .fade-left.visible,
@@ -444,13 +444,39 @@ ul  { list-style: none; }
   transform: none;
 }
 
-/* Stagger delays */
-.stagger-1 { transition-delay: 0.1s; }
-.stagger-2 { transition-delay: 0.2s; }
-.stagger-3 { transition-delay: 0.3s; }
-.stagger-4 { transition-delay: 0.4s; }
-.stagger-5 { transition-delay: 0.5s; }
-.stagger-6 { transition-delay: 0.6s; }
+/* Stagger delays — más espaciados para sensación premium */
+.stagger-1 { transition-delay: 0.08s; }
+.stagger-2 { transition-delay: 0.18s; }
+.stagger-3 { transition-delay: 0.28s; }
+.stagger-4 { transition-delay: 0.38s; }
+.stagger-5 { transition-delay: 0.48s; }
+.stagger-6 { transition-delay: 0.58s; }
+
+/* Animación específica tarjetas de actividades — sube con ligero scale */
+.actividad-card {
+  opacity: 0;
+  transform: translateY(32px) scale(0.97);
+  transition: opacity 0.7s var(--ease-elegante), transform 0.7s var(--ease-elegante),
+              box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.actividad-card.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Animación específica tarjetas de valores — aparecen con fade + sube muy poco */
+.valor-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s var(--ease-elegante), transform 0.65s var(--ease-elegante),
+              border-color 0.4s ease, background 0.4s ease;
+}
+
+.valor-item.visible {
+  opacity: 1;
+  transform: none;
+}
 
 /* ============================================================
    HERO
@@ -624,15 +650,16 @@ ul  { list-style: none; }
   background: var(--blanco);
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.5s var(--ease-elegante), box-shadow 0.5s var(--ease-elegante);
   text-decoration: none;
   color: inherit;
   display: block;
 }
 
-.actividad-card:hover {
-  transform: translateY(-8px);
+.actividad-card.visible:hover {
+  transform: translateY(-8px) scale(1) !important;
   box-shadow: 0 24px 60px rgba(0,0,0,0.12);
+  transition: transform 0.4s var(--ease-elegante), box-shadow 0.4s ease,
+              opacity 0s, border-color 0s;
 }
 
 .actividad-img-wrap {
@@ -998,7 +1025,6 @@ ul  { list-style: none; }
   text-align: center;
   padding: 40px 24px;
   border: 1px solid rgba(0,45,42,0.1);
-  transition: border-color 0.4s, background 0.4s;
   position: relative;
 }
 
