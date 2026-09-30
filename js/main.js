@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLogo = document.getElementById('navLogo');
 
   const handleNavbarScroll = () => {
+    if (navbar.classList.contains('navbar-solid')) return;
+    
     if (window.scrollY > 60) {
       if (!navbar.classList.contains('scrolled')) {
         navbar.classList.add('scrolled');

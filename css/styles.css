@@ -212,6 +212,11 @@ ul  { list-style: none; }
   color: var(--verde) !important;
 }
 
+.navbar.scrolled .nav-cta:hover {
+  color: var(--dorado) !important;
+  background: transparent !important;
+}
+
 /* Hamburger */
 .hamburger {
   display: none;
@@ -1038,6 +1043,71 @@ ul  { list-style: none; }
   .como-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
   .como-item:not(:last-child)::after { display: none; }
   .valores-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================
+   PÁGINAS LEGALES
+   ============================================================ */
+.sec-legal {
+  padding: 160px 0 100px; /* Espacio para el navbar fijo */
+  background-color: var(--marfil);
+  min-height: calc(100vh - 300px);
+}
+
+.legal-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--blanco);
+  padding: 60px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.legal-content h1 {
+  font-family: var(--font-titulo);
+  font-size: 42px;
+  color: var(--verde);
+  margin-bottom: 40px;
+}
+
+.legal-content h2 {
+  font-family: var(--font-titulo);
+  font-size: 24px;
+  color: var(--dorado);
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.legal-content p {
+  font-family: var(--font-cuerpo);
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--gris-medio);
+  margin-bottom: 16px;
+}
+
+.btn-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-cuerpo);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--verde);
+  margin-bottom: 40px;
+  transition: color var(--trans-rapida), gap var(--trans-rapida);
+}
+
+.btn-volver:hover {
+  color: var(--dorado);
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .legal-content { padding: 40px 24px; }
+  .legal-content h1 { font-size: 32px; }
 }
 
 @media (max-width: 900px) {
