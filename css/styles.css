@@ -50,6 +50,125 @@ img { display: block; max-width: 100%; }
 a   { text-decoration: none; color: inherit; }
 ul  { list-style: none; }
 
+/* ============================================================
+   BANNER DE COOKIES
+   ============================================================ */
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--verde);
+  border-top: 1px solid rgba(196, 135, 28, 0.4);
+  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.25);
+  padding: 20px 0;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.45s var(--ease-elegante), opacity 0.45s var(--ease-elegante);
+}
+
+#cookie-banner.cookie-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#cookie-banner.cookie-hidden {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.cookie-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.cookie-text {
+  flex: 1;
+}
+
+.cookie-title {
+  font-family: var(--font-titulo);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--marfil);
+  margin-bottom: 4px;
+}
+
+.cookie-desc {
+  font-family: var(--font-cuerpo);
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(245, 241, 234, 0.75);
+}
+
+.cookie-desc a {
+  color: var(--dorado);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-desc a:hover {
+  color: var(--dorado-claro);
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.cookie-btn {
+  font-family: var(--font-cuerpo);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 11px 24px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background var(--trans-rapida), color var(--trans-rapida), border-color var(--trans-rapida);
+}
+
+.cookie-btn-primary {
+  background: var(--dorado);
+  color: var(--verde);
+  border: 1px solid var(--dorado);
+}
+
+.cookie-btn-primary:hover {
+  background: var(--dorado-claro);
+  border-color: var(--dorado-claro);
+}
+
+.cookie-btn-secondary {
+  background: transparent;
+  color: rgba(245, 241, 234, 0.7);
+  border: 1px solid rgba(245, 241, 234, 0.3);
+}
+
+.cookie-btn-secondary:hover {
+  color: var(--marfil);
+  border-color: rgba(245, 241, 234, 0.7);
+}
+
+@media (max-width: 700px) {
+  .cookie-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 24px;
+  }
+  .cookie-actions { width: 100%; }
+  .cookie-btn { flex: 1; text-align: center; }
+}
+
+
+
 /* ---- Utilidades ------------------------------------------ */
 .container {
   width: 100%;
@@ -642,9 +761,9 @@ ul  { list-style: none; }
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  filter: invert(1); /* Invierte el blanco a negro y las letras a claro */
+  filter: grayscale(1) invert(1); /* Quita el color dorado y lo convierte a blanco puro */
   mix-blend-mode: screen; /* Solo muestra lo claro (las letras) */
-  opacity: 0.06; /* Suave marca de agua */
+  opacity: 0.12; /* Marca de agua más visible pero limpia */
   pointer-events: none;
 }
 

@@ -4,6 +4,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ---- 0. AÑO DEL FOOTER: se actualiza automáticamente ---- */
+  const yearEl = document.getElementById('footer-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
   /* ---- 1. NAVBAR: cambio de estilo y logo al hacer scroll --- */
   const navbar = document.getElementById('navbar');
   const navLogo = document.getElementById('navLogo');
