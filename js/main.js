@@ -164,10 +164,10 @@ document.addEventListener('DOMContentLoaded', () => {
   sections.forEach(sec => activeSectionObserver.observe(sec));
 
 
-  /* ---- 7. PARALLAX MUY SUTIL en imagen hero ----------------- */
+  /* ---- 7. PARALLAX MUY SUTIL en imagen hero (solo desktop) --- */
   const heroBgImg = document.querySelector('.hero-bg-img');
 
-  if (heroBgImg) {
+  if (heroBgImg && !isMobile) {
     window.addEventListener('scroll', () => {
       const scrolled = window.scrollY;
       heroBgImg.style.transform = `translateY(${scrolled * 0.18}px)`;
